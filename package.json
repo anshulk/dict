@@ -1,0 +1,29 @@
+{
+  "name": "dict",
+  "version": "0.0.1",
+  "description": "command line dictionary",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anshulk/dict.git"
+  },
+  "keywords": [
+    "dictionary"
+  ],
+  "author": "anshulk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anshulk/dict/issues"
+  },
+  "homepage": "https://github.com/anshulk/dict#readme",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "request": "^2.78.0"
+  },
+  "bin": {
+    "dict": "./app.js"
+  }
+}
