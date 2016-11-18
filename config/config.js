@@ -14,7 +14,7 @@ module.exports = {
   
   params : {
     'def': {
-      limit: 200,
+      limit: 5,
       includeRelated: true,
       sourceDictionaries: 'all',
       useCanonical: false,
@@ -29,7 +29,7 @@ module.exports = {
   
     'ant': {
       useCanonical: false,
-      relationTypes: 'synonyms',
+      relationTypes: 'antonyms',
       limitPerRelationshipType: 10
     },
   

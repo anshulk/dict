@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var api = require('./api/wordnik');
+var format = require('./utils/format');
 
 const program = require('commander');
 
@@ -11,9 +12,9 @@ program
   .command('def <word>')
   .description('Display definitions of a word.')
   .action(function(word){
-    console.log("In func ", word);
     api.getData(word, 'def', function(err, data){
-      console.log('err data', err, data);
+      data = JSON.parse(data);
+      format.def(word,data);
     });
   });
 
@@ -21,7 +22,10 @@ program
   .command('syn <word>')
   .description('Display synonyms of a word.')
   .action(function (word) {
-    console.log("Getting synonyms for ", word);
+    api.getData(word, 'syn', function(err, data){
+      data = JSON.parse(data);
+      format.syn(word,data);
+    });
   });
 
 program
@@ -35,7 +39,10 @@ program
   .command('ant <word>')
   .description('Display antonyms of a word.')
   .action(function (word) {
-    console.log("Getting antonyms for ", word);
+    api.getData(word, 'ant', function(err, data){
+      data = JSON.parse(data);
+      format.ant(word,data);
+    });
   });
 
 
@@ -43,7 +50,10 @@ program
   .command('ex <word>')
   .description('Display synonyms of a word.')
   .action(function (word) {
-    console.log("Getting examples for ", word);
+    api.getData(word, 'ex', function(err, data){
+      data = JSON.parse(data);
+      format.ex(word,data);
+    });
   });
 
 program

@@ -19,12 +19,11 @@ module.exports = {
       qs: qs
     };
 
-    console.log(req);
+    // console.log(req);
 
     request(
       req,
       function(err, response, body) {
-        console.log("Get response: " + response);
         cb(err, body);
       }
     );
